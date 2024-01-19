@@ -40,6 +40,7 @@ function chooseCategory(element){
         b.disabled = true;
     });
     
+    console.log(drawnWord);
     renderWord();
 }
 
