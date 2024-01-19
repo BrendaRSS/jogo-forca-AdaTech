@@ -1,4 +1,7 @@
 import { categories, countries, animamls, fruits } from "./arrays.js";
+let drawnWord;
+const correctLetters = [];
+const wrongLetters = [];
 
 function renderCategories(){
     const containerButtons = document.querySelector(".botoes");
@@ -17,18 +20,38 @@ renderCategories();
 function chooseCategory(element){
     switch (element.textContent.toLowerCase()){
         case "países":
-            console.log(element.textContent);
+            drawnWord = countries[Math.floor(Math.random() * countries.length)];
             break;
         
         case "animais":
-            console.log(element.textContent);
+            drawnWord = animamls[Math.floor(Math.random() * countries.length)];
             break;
         
         case "frutas":
-            console.log(element.textContent);
+            drawnWord = fruits[Math.floor(Math.random() * countries.length)];
             break;
 
         default:
             console.log("Categoria não encontrada");
     }
+
+    const buttons = document.querySelectorAll(".botao");
+    buttons.forEach(b => {
+        b.disabled = true;
+    });
+    
+    renderWord();
 }
+
+function renderWord(){
+    const wordArray = drawnWord.split("");
+    const divDrawnWord = document.querySelector(".palavra-sorteada");
+    divDrawnWord.innerHTML = wordArray.map( l => {
+        return `<span>__</span>`
+    }).join('');
+}
+
+// OBS.: Toda vez que o usuário apertar uma letra aconceterá:
+// 1: Letra ficará disable
+// 2: verificar se a letra é certa ou errada
+// 3: verificar se o usuário já ganhou ou perdeu

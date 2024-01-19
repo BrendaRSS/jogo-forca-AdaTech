@@ -1,7 +1,7 @@
 export const categories = ["países", "animais", "frutas"]
 
-export const countries = []
+export const countries = ["brasil", "alemanha", "angola", "argentina", "canada"]
 
-export const animamls = []
+export const animamls = ["vaca", "camelo", "cobra", "gato", "cachorro", "papagaio", "arara", "urubu"]
 
-export const fruits = []
+export const fruits = ["morango", "manga", "banana", "abacate", "jambo", "pitaia", "figo", "graviola"]
