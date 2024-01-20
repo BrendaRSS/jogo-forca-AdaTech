@@ -24,11 +24,11 @@ function chooseCategory(element) {
             break;
 
         case "animais":
-            drawnWord = animals[Math.floor(Math.random() * countries.length)];
+            drawnWord = animals[Math.floor(Math.random() * animals.length)];
             break;
 
         case "frutas":
-            drawnWord = fruits[Math.floor(Math.random() * countries.length)];
+            drawnWord = fruits[Math.floor(Math.random() * fruits.length)];
             break;
 
         default:
@@ -89,6 +89,11 @@ function handleKey(key) {
         correctLetters.push(key);
     } else {
         wrongLetters.push(key);
+        
+        const body = document.querySelectorAll(".forca-parte");
+        for(let i =0; i < wrongLetters.length; i++){
+            body[i].style.display="block";
+        }
     }
 
     // Atualiza a exibição da palavra sorteada
@@ -107,10 +112,22 @@ function disableKey(key) {
 }
 
 function checkGameStatus() {
-    // Lógica para verificar se o usuário ganhou ou perdeu
+    const body = document.querySelectorAll(".forca-parte");
+    const wordArray = drawnWord.split("");
+
+    if(wrongLetters.length === body.length){
+        const buttons = document.querySelectorAll(".botao-teclado");
+        buttons.forEach(letra => {
+            letra.disabled = true;
+        });
+
+        setTimeout(()=>{
+            alert("Você perdeu");
+            // fazer aparecer a palavra em tom vermelho
+        }, 500)
+    }
+
+    // TODO: Verificar se p usuário ganhou aqui
+
 }
 
-// OBS.: Toda vez que o usuário apertar uma letra aconceterá:
-// 1: Letra ficará disable
-// 2: verificar se a letra é certa ou errada
-// 3: verificar se o usuário já ganhou ou perdeu

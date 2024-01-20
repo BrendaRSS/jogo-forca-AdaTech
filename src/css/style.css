@@ -54,10 +54,26 @@ h1{
     align-items: center;
 }
 
+.svg-forca {
+  fill: transparent;
+  stroke: #000000;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.forca-parte {
+  display: none;
+}
+
+
 .container-palavras{
     width: 65%;
     box-sizing: border-box;
-    padding-top: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .categorias{
@@ -121,6 +137,7 @@ h1{
 }
 
 .botao-teclado {
+    width: 70px;
     box-shadow: inset 0px 39px 0px -24px #3c809b;
     background-color: #28596d;
     border-radius: 4px;
