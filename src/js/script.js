@@ -3,6 +3,9 @@ import { categories, countries, animals, fruits } from "./arrays.js";
 let drawnWord;
 const correctLetters = [];
 const wrongLetters = [];
+//desabilitar botao de chutar enquanto nao gerar palavra
+const buttonCategory = document.getElementById("chutar");
+buttonCategory.disabled = true;
 
 function renderCategories() {
   const containerButtons = document.querySelector(".botoes");
@@ -36,6 +39,9 @@ function chooseCategory(element) {
     default:
       console.log("Categoria não encontrada");
   }
+  //ativar botao de chutar apos gerar palavra
+  const buttonCategory = document.getElementById("chutar");
+  buttonCategory.disabled = false;
 
   const buttons = document.querySelectorAll(".botao");
   buttons.forEach((b) => {
