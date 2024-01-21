@@ -167,3 +167,8 @@ h1{
     text-shadow: 0px 1px 0px #373838;
     cursor: not-allowed;
 }
+
+.wrongWord {
+    color: red;
+    font-weight: bold;
+}

@@ -117,13 +117,20 @@ function checkGameStatus() {
 
     if(wrongLetters.length === body.length){
         const buttons = document.querySelectorAll(".botao-teclado");
+        const word = document.querySelector(".palavra-sorteada");
+        
         buttons.forEach(letra => {
             letra.disabled = true;
         });
 
+        word.innerHTML = "";
+        word.classList.add("wrongWord");
+        word.innerHTML = wordArray.map(l => {
+            return `<span>${l.toUpperCase()}</span>`
+        }).join("");
+
         setTimeout(()=>{
-            alert("Você perdeu");
-            // fazer aparecer a palavra em tom vermelho
+            alert("Você Perdeu!");
         }, 500)
     }
 
