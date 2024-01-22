@@ -11,3 +11,11 @@ O que foi proposto pelo professor:
 - Brenda Rayane
 - Douglas Alves
 - Leandro Bispo 
+
+### Imagens do projeto:
+<div>
+    <img src="src/assets/img2.png" alt="Imagem da forca" width="700" height="400">
+</div>
+<div>
+    <img src="src/assets/img1.png" alt="Imagem da forca" width="700" height="400">
+</div>
